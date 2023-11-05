@@ -1,30 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 5
+#define SIZE 4
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) {
-	
-	int a[SIZE] = {1, 2, 3, 4, 5};
-	int b[SIZE] = {1, 2, 3, 4, 5};
-	int flag = 0;
+void square_array(int a[], int size)
+{
 	int i;
 	
-	for (i=0; i<SIZE; i++)
-	{
+	for (i=0; i<size; i++)
+	 a[i] = a[i] * a[i];
+	 
+}
+
+void print_array(int a[], int size)
+{
+	int i;
+	for(i=0; i<size; i++)
+	 printf("%3d", a[i]);
+	 printf("\n");
+	 
+}
+
+
+int main(int argc, char *argv[]) {
 	
-	 if (a[i] != b[i]) {
+	int list[SIZE] = {1, 2, 3, 4};
 	
-	  printf("array a and b are not the same\n");
-	  flag = 1;
-     }
-    }
- 	 
-	  if(flag == 0)
-	  printf("arraya a and b are the same\n");
-	  
+	print_array(list, SIZE);
+	square_array(list, SIZE);
+	print_array(list, SIZE);
+	
+	
 	system("PAUSE"); 
 	return 0;
 }
